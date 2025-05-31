@@ -18,15 +18,33 @@ function loadQuestion() {
   q.choices.forEach((choice, index) => {
     const btn = document.createElement("button");
     btn.textContent = choice;
-    btn.onclick = () => checkAnswer(index);
+    btn.onclick = () => checkAnswer(index, btn);
     choicesEl.appendChild(btn);
   });
+
+  nextBtn.style.display = "none";
 }
 
-function checkAnswer(selected) {
+function checkAnswer(selected, button) {
   const correct = quizData[currentQuestion].answer;
-  if (selected === correct) score++;
+  const buttons = choicesEl.querySelectorAll("button");
 
+  buttons.forEach((btn, index) => {
+    btn.disabled = true;
+    if (index === correct) {
+      btn.style.backgroundColor = "#4CAF50"; // hijau untuk benar
+      btn.style.color = "white";
+    } else if (index === selected) {
+      btn.style.backgroundColor = "#f44336"; // merah untuk salah
+      btn.style.color = "white";
+    }
+  });
+
+  if (selected === correct) score++;
+  nextBtn.style.display = "inline-block";
+}
+
+function nextQuestion() {
   currentQuestion++;
   if (currentQuestion < quizData.length) {
     loadQuestion();
@@ -41,5 +59,5 @@ function showResult() {
   scoreEl.textContent = `Nilai Anda: ${score} dari ${quizData.length} soal`;
 }
 
-nextBtn.style.display = "none";
+nextBtn.onclick = nextQuestion;
 loadQuestion();
