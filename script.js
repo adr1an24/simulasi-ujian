@@ -1,4 +1,507 @@
-const quizData = [{'question': '1. Dasar hukum utama perencanaan tata ruang kota diatur dalam:', 'choices': ['UU No. 5 Tahun 1990', 'UU No. 24 Tahun 1992', 'UU No. 32 Tahun 2004', 'UU No. 11 Tahun 2008'], 'answer': 1}, {'question': '2. Jenis rencana tata ruang yang menetapkan kawasan dilindungi dan dibudidayakan adalah:', 'choices': ['Rencana Struktur', 'Rencana Rinci', 'Rencana Umum', 'Rencana Induk'], 'answer': 2}, {'question': '3. RDTR adalah kepanjangan dari:', 'choices': ['Rencana Detil Transportasi dan Ruang', 'Rencana Detail Tata Ruang', 'Rencana Dasar Tata Ruang', 'Rencana Daerah Tertib Ruang'], 'answer': 1}, {'question': '4. Salah satu tujuan utama perencanaan kota adalah:', 'choices': ['Meningkatkan pendapatan negara', 'Menarik investor asing', 'Meningkatkan kualitas hidup masyarakat kota', 'Memperbanyak pemukiman elit'], 'answer': 2}, {'question': '5. Proses pertama dalam perencanaan kota adalah:', 'choices': ['Penetapan rencana', 'Identifikasi potensi', 'Perumusan rencana', 'Penentuan arah pengembangan'], 'answer': 3}, {'question': '6. Salah satu masalah spesifik dalam penataan ruang adalah:', 'choices': ['Kriminalitas', 'Manajemen lahan', 'Pendidikan', 'Hiburan'], 'answer': 1}, {'question': '7. Salah satu isu strategis manajemen lahan adalah:', 'choices': ['Pembuatan jalan tol', 'Pembangunan gedung tinggi', 'Penggunaan kebijakan pajak', 'Reboisasi'], 'answer': 2}, {'question': '8. Limbah rumah tangga termasuk isu strategis:', 'choices': ['Pendidikan', 'Lingkungan hidup perkotaan', 'Sosial', 'Keamanan'], 'answer': 1}, {'question': '9. Masalah utama prasarana kota adalah:', 'choices': ['Kekurangan guru', 'Prasarana tidak memadai', 'Banyak rumah mewah', 'Rendahnya upah'], 'answer': 1}, {'question': '10. Permasalahan pembiayaan kota sering kali karena:', 'choices': ['Pajak daerah terlalu tinggi', 'Sistem ekonomi tidak didukung rencana', 'Kelebihan dana', 'Tidak adanya investor'], 'answer': 1}, {'question': '11. Salah satu bentuk kerja sama potensial antara pemerintah dan swasta adalah:', 'choices': ['Pendidikan dasar', 'Pengelolaan jalan tol', 'Kegiatan keagamaan', 'Pelayanan kesehatan rumah tangga'], 'answer': 1}, {'question': '12. Urbanisasi di Indonesia dicirikan oleh:', 'choices': ['Proses yang lambat', 'Keseimbangan desa dan kota', 'Pertumbuhan yang cepat', 'Penurunan jumlah penduduk kota'], 'answer': 2}, {'question': '13. Kota kompak memiliki ciri:', 'choices': ['Menyebar luas', 'Teratur dan padat', 'Tidak beraturan', 'Campuran fungsi'], 'answer': 1}, {'question': '14. Pendekatan sistem kegiatan menekankan pada:', 'choices': ['Bentuk fisik kota', 'Aktivitas dan rutinitas manusia', 'Nilai lahan', 'Estetika kota'], 'answer': 1}, {'question': '15. Centripetal forces mendorong aktivitas ke:', 'choices': ['Pinggiran kota', 'Desa', 'Pusat kota', 'Kawasan industri'], 'answer': 2}, {'question': '16. Teori bid-rent berkaitan dengan:', 'choices': ['Polusi udara', 'Nilai sewa lahan', 'Keindahan kota', 'Transportasi'], 'answer': 1}, {'question': '17. Konsep “suka” menurut Kus Hadinoto merujuk pada:', 'choices': ['Tempat tinggal', 'Jalan', 'Rekreasi dan hiburan', 'Tempat ibadah'], 'answer': 2}, {'question': '18. Kevin Lynch menyebut jalur dan jalan dalam kota sebagai:', 'choices': ['Edge', 'Node', 'Path', 'District'], 'answer': 2}, {'question': '19. Jenis jalan dalam sistem kota yang melayani skala besar adalah:', 'choices': ['Lokal', 'Kolektor', 'Arteri', 'Tol pribadi'], 'answer': 2}, {'question': '20. Kawasan tidak terbangun dalam kota disebut:', 'choices': ['RTH', 'Kawasan komersial', 'Pusat industri', 'Kawasan elit'], 'answer': 0}, {'question': '21. Tujuan utama perencanaan wilayah adalah:', 'choices': ['Meningkatkan ekspor', 'Mengurangi kesenjangan antarwilayah', 'Menurunkan biaya pendidikan', 'Memperbanyak lahan industri'], 'answer': 1}, {'question': '22. UU yang mengatur otonomi daerah terbaru adalah:', 'choices': ['UU No. 5/1974', 'UU No. 22/1999', 'UU No. 32/2004', 'UU No. 11/2008'], 'answer': 2}, {'question': '23. Salah satu pendekatan dalam penyusunan rencana pembangunan adalah:', 'choices': ['Pendekatan ego sektoral', 'Pendekatan teknokratik', 'Pendekatan spekulatif', 'Pendekatan vertikal'], 'answer': 1}, {'question': '24. RPJM Daerah berlaku selama:', 'choices': ['1 tahun', '3 tahun', '5 tahun', '20 tahun'], 'answer': 2}, {'question': '25. Sistem kota terbentuk karena:', 'choices': ['Tingginya kriminalitas', 'Keterkaitan spasial dan fungsional antar kota', 'Dominasi negara asing', 'Keberadaan mall'], 'answer': 1}, {'question': '26. Pusat pertumbuhan dalam teori Growth Pole disebut:', 'choices': ['Industrial unit', 'Propulsive industry', 'Urban sprawl', 'Urban core'], 'answer': 1}, {'question': '27. Faktor pendorong urbanisasi termasuk, kecuali:', 'choices': ['Teknologi pertanian lambat', 'Kelahiran tinggi di desa', 'Banyak ruang terbuka hijau', 'Layanan pemerintah di kota'], 'answer': 2}, {'question': '28. Urbanisasi semu adalah urbanisasi tanpa:', 'choices': ['Penambahan penduduk', 'Pekerjaan di sektor formal', 'Laju migrasi', 'Perluasan kota'], 'answer': 1}, {'question': '29. Kota dalam jaringan global hanya bertahan jika:', 'choices': ['Meniru gaya barat', 'Kompetitif', 'Banyak penduduk', 'Lokasi strategis'], 'answer': 1}, {'question': '30. Mega city di Asia berkembang karena:', 'choices': ['Ekspor pertanian', 'Investasi asing & korporasi transnasional', 'Kebijakan pemerintah daerah', 'Urban farming'], 'answer': 1}, {'question': '31. Kota sebagai sistem kompleks mencakup unsur berikut, kecuali:', 'choices': ['Fisik', 'Sosial', 'Ekonomi', 'Militer'], 'answer': 3}, {'question': '32. Fungsi dasar kota menurut NUDS, kecuali:', 'choices': ['Goods processing', 'Transport hub', 'Hinterland services', 'Residential subcenter'], 'answer': 1}, {'question': '33. Pendekatan ekologikal dalam tata ruang kota menekankan pada:', 'choices': ['Nilai ekonomi', 'Interaksi manusia-lingkungan', 'Fungsi bangunan', 'Pola transportasi'], 'answer': 1}, {'question': '34. Gaya yang mendorong aktivitas keluar pusat kota disebut:', 'choices': ['Sentripetal', 'Sprawl', 'Sentrifugal', 'Aglomerasi'], 'answer': 2}, {'question': '35. Teori ekonomi basis menjelaskan pertumbuhan kota melalui:', 'choices': ['Konsumsi masyarakat', 'Ekspor barang/jasa', 'Hiburan', 'Pendidikan'], 'answer': 1}, {'question': '36. Indikator utama morfologi kota adalah:', 'choices': ['Pendapatan penduduk', 'Jaringan jalan', 'Jumlah mal', 'Akses WiFi'], 'answer': 1}, {'question': '37. Perencanaan strategis bersifat:', 'choices': ['Administratif', 'Prosedural', 'Partisipatif & spesifik', 'Rutin'], 'answer': 2}, {'question': '38. Fungsi pusat kota dalam struktur kota adalah:', 'choices': ['Hunian elit', 'Pusat kegiatan utama', 'Kawasan industri berat', 'Ruang terbuka'], 'answer': 1}, {'question': '39. Kota dengan dominasi peran nasional dalam RTRWN disebut:', 'choices': ['PKL', 'PKW', 'PKN', 'PRM'], 'answer': 2}, {'question': '40. Skenario strategi kota luar Jawa menurut strategi nasional pengembangan perkotaan adalah:', 'choices': ['Industri bersih', 'Agrobisnis & industri pengolahan', 'Wisata bahari', 'Perdagangan bebas'], 'answer': 1}];
+const quizData = [
+  {
+    question: "1. Dasar hukum utama penataan ruang yang menjadi dasar prosedural adalah:",
+    choices: [
+      "Permendagri No. 2 Tahun 1987",
+      "Kepmen PU No. 640/KPTS/1986",
+      "UU No. 24 Tahun 1992",
+      "Keputusan MenKimpraswil No. 327/KPTS/M/2002"
+    ],
+    answer: 2
+  },
+  {
+    question: "2. Rencana yang mengatur hubungan antar blok kawasan dan utilitas disebut:",
+    choices: [
+      "Rencana Struktur",
+      "Rencana Umum",
+      "RDTR (Rencana Detail Tata Ruang)",
+      "RTR (Rencana Teknik Ruang)"
+    ],
+    answer: 2
+  },
+  {
+    question: "3. Tujuan utama dari perencanaan kota adalah:",
+    choices: [
+      "Meningkatkan jumlah industri",
+      "Meningkatkan kualitas hidup masyarakat kota",
+      "Meningkatkan PAD",
+      "Meningkatkan kawasan terbangun"
+    ],
+    answer: 1
+  },
+  {
+    question: "4. Salah satu isu strategis dalam manajemen lahan kota adalah:",
+    choices: [
+      "Pembangunan gedung tinggi",
+      "Efektivitas manajemen lahan",
+      "Pemekaran wilayah kota",
+      "Penertiban bangunan liar"
+    ],
+    answer: 1
+  },
+  {
+    question: "5. Masalah utama lingkungan hidup perkotaan adalah, kecuali:",
+    choices: [
+      "Emisi kendaraan",
+      "Polusi industri",
+      "Kepadatan jalan",
+      "Limbah rumah tangga"
+    ],
+    answer: 2
+  },
+  {
+    question: "6. Faktor yang menyebabkan rencana prasarana kota tidak efektif adalah:",
+    choices: [
+      "Prasarana terlalu mahal",
+      "Kelebihan penduduk",
+      "Prasarana mengikuti pertumbuhan",
+      "Terbatasnya ruang terbuka hijau"
+    ],
+    answer: 2
+  },
+  {
+    question: "7. Masalah pembiayaan kota umumnya disebabkan oleh:",
+    choices: [
+      "Pendanaan tidak dikaitkan dengan rencana",
+      "Kurangnya teknologi",
+      "Kurangnya partisipasi masyarakat",
+      "Pengaruh urbanisasi"
+    ],
+    answer: 0
+  },
+  {
+    question: "8. Kerja sama antara pemerintah, swasta, dan masyarakat menjadi penting karena:",
+    choices: [
+      "Pemerintah memiliki sumber daya besar",
+      "Pemerintah tidak perlu ikut campur",
+      "Pihak lain memiliki potensi besar",
+      "Hanya swasta yang bisa membangun"
+    ],
+    answer: 2
+  },
+  {
+    question: "9. Ciri utama pertumbuhan perkotaan di Indonesia adalah:",
+    choices: [
+      "Bertahap dan lambat",
+      "Sama seperti negara maju",
+      "Cepat dan mirip negara berkembang lain",
+      "Didominasi oleh kawasan industri"
+    ],
+    answer: 2
+  },
+  {
+    question: "10. Salah satu jenis kebijakan perkotaan yang secara langsung mengatur kota adalah:",
+    choices: [
+      "Kebijakan implisit",
+      "Kebijakan eksplisit",
+      "Kebijakan sektoral",
+      "Kebijakan pembangunan"
+    ],
+    answer: 1
+  },
+  {
+    question: "11. Strategi nasional pengembangan kota di luar Jawa difokuskan pada:",
+    choices: [
+      "Industri berat dan manufaktur",
+      "Pariwisata dan industri kreatif",
+      "Industri pengolahan dan agrobisnis",
+      "Teknologi dan pendidikan tinggi"
+    ],
+    answer: 2
+  },
+  {
+    question: "12. Tipologi dan fungsi kota dalam strategi spasial pengembangan kota merujuk pada:",
+    choices: [
+      "Jumlah penduduk",
+      "Fungsi kota dan keterkaitannya",
+      "Status administratif",
+      "Letak geografis"
+    ],
+    answer: 1
+  },
+  {
+    question: "13. Pendekatan yang melihat masalah kota secara menyeluruh dan terpadu adalah:",
+    choices: [
+      "Disjointed Incremental",
+      "Strategic Planning",
+      "Rational Comprehensive Planning",
+      "Advocacy Planning"
+    ],
+    answer: 2
+  },
+  {
+    question: "14. Pendekatan perencanaan yang menggabungkan cara komprehensif dan bertahap adalah:",
+    choices: [
+      "Strategic Planning",
+      "Mix-scanning Approach",
+      "Advocacy Planning",
+      "Disjointed Incremental"
+    ],
+    answer: 1
+  },
+  {
+    question: "15. Gaya sentripetal dalam tata ruang kota berarti:",
+    choices: [
+      "Orang menjauh dari pusat kota",
+      "Orang tertarik ke pusat kota",
+      "Orang pindah ke desa",
+      "Orang menetap di pinggiran"
+    ],
+    answer: 1
+  },
+  {
+    question: "16. Pola pemanfaatan ruang kota dibedakan menjadi dua jenis kawasan, yaitu:",
+    choices: [
+      "Komersial dan perumahan",
+      "Terbangun dan tidak terbangun",
+      "Pusat dan pinggiran",
+      "Formal dan informal"
+    ],
+    answer: 1
+  },
+  {
+    question: "17. Jaringan jalan berperan penting karena:",
+    choices: [
+      "Membatasi pertumbuhan kota",
+      "Memisahkan kawasan hunian",
+      "Menentukan morfologi kota",
+      "Menjadi penghambat transportasi"
+    ],
+    answer: 2
+  },
+  {
+    question: "18. Tingkatan dalam hierarki perencanaan wilayah antara lain:",
+    choices: [
+      "RTRW Regional, Provinsi, Nasional",
+      "RTRW Kabupaten/Kota, Provinsi, Nasional",
+      "RTRW Kecamatan, Kabupaten, Provinsi",
+      "RTRW Kota, Nasional, Dunia"
+    ],
+    answer: 1
+  },
+  {
+    question: "19. Tujuan perencanaan pembangunan wilayah salah satunya adalah:",
+    choices: [
+      "Meningkatkan pembangunan kota besar saja",
+      "Mendorong pertumbuhan penduduk",
+      "Meningkatkan urbanisasi desa",
+      "Mengurangi kesenjangan antarwilayah"
+    ],
+    answer: 3
+  },
+  {
+    question: "20. Dalam konteks perencanaan daerah, RPJP Daerah berlaku selama:",
+    choices: [
+      "1 tahun",
+      "5 tahun",
+      "10 tahun",
+      "20 tahun"
+    ],
+    answer: 3
+  },
+    {
+    question: "21. RPJM Daerah merupakan penjabaran dari:",
+    choices: [
+      "RKPD Daerah",
+      "RPJP Daerah",
+      "RPJP Nasional",
+      "RKP Nasional"
+    ],
+    answer: 1
+  },
+  {
+    question: "22. RKPD disusun setiap tahun dan berisi:",
+    choices: [
+      "Laporan penggunaan anggaran",
+      "Evaluasi proyek sebelumnya",
+      "Rencana kerja dan pendanaan tahunan",
+      "Strategi keamanan daerah"
+    ],
+    answer: 2
+  },
+  {
+    question: "23. Pendekatan teknokratik dalam perencanaan disusun berdasarkan:",
+    choices: [
+      "Proses politik",
+      "Aspirasi masyarakat",
+      "Kajian ilmiah dan data",
+      "Musyawarah desa"
+    ],
+    answer: 2
+  },
+  {
+    question: "24. Sistem perencanaan pembangunan nasional menghasilkan dokumen perencanaan seperti:",
+    choices: [
+      "RPJP, RPJM, RKPD",
+      "RPJP, RTRW, APBD",
+      "RPJM, RKA, SOTK",
+      "RKPD, LKPD, RPJP"
+    ],
+    answer: 0
+  },
+  {
+    question: "25. Fungsi kota sebagai node dalam sistem kota-kota berarti kota menjadi:",
+    choices: [
+      "Pusat perdagangan",
+      "Simpul distribusi dan koneksi",
+      "Pusat industri besar",
+      "Kawasan konservasi"
+    ],
+    answer: 1
+  },
+  {
+    question: "26. Primate city terjadi ketika:",
+    choices: [
+      "Semua kota berkembang seimbang",
+      "Kota utama mendominasi jauh di atas kota lain",
+      "Pusat kota pindah ke desa",
+      "Kota-kota berukuran sama"
+    ],
+    answer: 1
+  },
+  {
+    question: "27. Salah satu fungsi kota menurut NUDS (1985) adalah:",
+    choices: [
+      "Pusat kerajinan lokal",
+      "Gudang distribusi",
+      "Interregional communication",
+      "Pusat relokasi"
+    ],
+    answer: 2
+  },
+  {
+    question: "28. Dalam era globalisasi, kota menjadi bagian dari:",
+    choices: [
+      "Kawasan agraris",
+      "Jejaring global selektif",
+      "Wilayah tertutup",
+      "Kota mandiri"
+    ],
+    answer: 1
+  },
+  {
+    question: "29. Teori Basis Ekonomi menekankan peran:",
+    choices: [
+      "Perdagangan dalam kota",
+      "Pajak daerah",
+      "Ekspor barang/jasa keluar wilayah",
+      "Perumahan rakyat"
+    ],
+    answer: 2
+  },
+  {
+    question: "30. Konsep dalam Growth Pole Theory yang menjelaskan efek menular pertumbuhan adalah:",
+    choices: [
+      "Circular & Cumulative Causation",
+      "Multiplier Budgeting",
+      "Deregulasi Ekonomi",
+      "Urban Agglomeration"
+    ],
+    answer: 0
+  },
+   {
+    question: "31. Salah satu syarat kota dapat menjadi pusat pertumbuhan menurut teori kutub pertumbuhan adalah:",
+    choices: [
+      "Memiliki sejarah panjang",
+      "Letaknya dekat laut",
+      "Terdapat hubungan antar aktivitas ekonomi",
+      "Memiliki kawasan konservasi"
+    ],
+    answer: 2
+  },
+  {
+    question: "32. Urbanisasi disebut 'sejati' bila:",
+    choices: [
+      "Terjadi perpindahan dari kota ke desa",
+      "Penduduk desa meningkat drastis",
+      "Penduduk kota bertambah karena kelahiran saja",
+      "Penduduk kota bertambah lebih cepat dari desa"
+    ],
+    answer: 3
+  },
+  {
+    question: "33. Urbanisasi semu di negara berkembang terjadi karena:",
+    choices: [
+      "Pertumbuhan sektor industri",
+      "Migrasi ke kota tanpa dukungan ekonomi",
+      "Peningkatan kualitas desa",
+      "Kebijakan desentralisasi"
+    ],
+    answer: 1
+  },
+  {
+    question: "34. Salah satu faktor pendorong urbanisasi adalah:",
+    choices: [
+      "Kualitas layanan desa meningkat",
+      "Kepemilikan tanah luas di desa",
+      "Kebijakan relokasi ke desa",
+      "Teknologi pertanian yang lambat"
+    ],
+    answer: 3
+  },
+  {
+    question: "35. Salah satu unsur struktur kota menurut Doxiadis adalah:",
+    choices: [
+      "Lingkungan hidup",
+      "Pemerintah daerah",
+      "Network (jaringan)",
+      "Kapasitas ekonomi"
+    ],
+    answer: 2
+  },
+  {
+    question: "36. Kevin Lynch mengemukakan lima elemen persepsional kota, kecuali:",
+    choices: [
+      "Node",
+      "Landmark",
+      "Block",
+      "Edge"
+    ],
+    answer: 2
+  },
+  {
+    question: "37. Contoh gaya sentrifugal dalam perkembangan kota adalah:",
+    choices: [
+      "Akses transportasi mudah",
+      "Kemacetan dan biaya hidup tinggi di pusat",
+      "Pusat pekerjaan melimpah",
+      "Hiburan lengkap di kota"
+    ],
+    answer: 1
+  },
+  {
+    question: "38. Kota kompak memiliki ciri-ciri:",
+    choices: [
+      "Penyebaran tidak teratur",
+      "Padat dan teratur",
+      "Minim jaringan jalan",
+      "Terdiri dari banyak pusat"
+    ],
+    answer: 1
+  },
+  {
+    question: "39. Pendekatan spasial dalam memahami kota berfokus pada:",
+    choices: [
+      "Ekonomi global",
+      "Geografi perkotaan",
+      "Asal usul budaya",
+      "Sistem hukum"
+    ],
+    answer: 1
+  },
+  {
+    question: "40. Salah satu permasalahan utama dalam penataan ruang adalah:",
+    choices: [
+      "Kekurangan tenaga kerja",
+      "Kesesuaian fungsi ruang",
+      "Ketidaksesuaian kepentingan dan kewenangan antar jenjang pemerintah",
+      "Kurangnya kampanye publik"
+    ],
+    answer: 2
+  },
+   {
+    question: "41. Perencanaan pembangunan daerah merupakan bagian dari:",
+    choices: [
+      "Proyek swasta nasional",
+      "Pengawasan pusat",
+      "Pembangunan nasional",
+      "Program kampus merdeka"
+    ],
+    answer: 2
+  },
+  {
+    question: "42. Paradigma otonomi daerah memberikan hak kepada daerah untuk:",
+    choices: [
+      "Mengabaikan kebijakan nasional",
+      "Mengatur rumah tangganya sendiri",
+      "Menarik investor asing secara bebas",
+      "Menghapus pajak pusat"
+    ],
+    answer: 1
+  },
+  {
+    question: "43. Unsur penting dalam perencanaan pembangunan daerah adalah, kecuali:",
+    choices: [
+      "Aspek lingkungan",
+      "Aspek institusi perencana",
+      "Aspek jumlah sekolah",
+      "Aspek ruang & waktu"
+    ],
+    answer: 2
+  },
+  {
+    question: "44. Salah satu pendekatan penyusunan rencana pembangunan daerah adalah:",
+    choices: [
+      "Pendekatan program studi",
+      "Pendekatan teknokratik",
+      "Pendekatan perorangan",
+      "Pendekatan analitik"
+    ],
+    answer: 1
+  },
+  {
+    question: "45. Dalam pendekatan partisipatif, penyusunan rencana melibatkan:",
+    choices: [
+      "Pusat dan provinsi",
+      "Stakeholders dan masyarakat",
+      "Pengusaha asing",
+      "Hanya kepala daerah"
+    ],
+    answer: 1
+  },
+  {
+    question: "46. Pendekatan top-down dan bottom-up menyatukan:",
+    choices: [
+      "Pendekatan pembangunan dan politik",
+      "Kepentingan sektor industri dan pertanian",
+      "Pusat dan daerah melalui musyawarah jenjang",
+      "Perusahaan dan pemerintah pusat"
+    ],
+    answer: 2
+  },
+  {
+    question: "47. Pembangunan nasional bertujuan untuk:",
+    choices: [
+      "Menambah jumlah kota besar",
+      "Mencapai tujuan negara",
+      "Mengurangi pajak daerah",
+      "Meningkatkan ekspor komoditas"
+    ],
+    answer: 1
+  },
+  {
+    question: "48. Sistem kota-kota terbentuk karena:",
+    choices: [
+      "Saling bersaing antar kota",
+      "Konflik antar kabupaten",
+      "Keterkaitan spasial dan fungsional",
+      "Pengaruh dari luar negeri"
+    ],
+    answer: 2
+  },
+  {
+    question: "49. Kota dalam sistem global cenderung bersifat selektif, artinya:",
+    choices: [
+      "Semua kota masuk jaringan global",
+      "Hanya kota kompetitif yang masuk jaringan global",
+      "Kota kecil lebih unggul dari kota besar",
+      "Semua kota memiliki fungsi sama"
+    ],
+    answer: 1
+  },
+  {
+    question: "50. Mega Urban Regions (MUR) muncul di Asia karena:",
+    choices: [
+      "Arus investasi asing dan korporasi transnasional",
+      "Perpindahan penduduk antar negara",
+      "Program transmigrasi besar-besaran",
+      "Pemerataan ekonomi desa"
+    ],
+    answer: 0
+  }
+
+];
+
 
 let currentQuestion = 0;
 let score = 0;
